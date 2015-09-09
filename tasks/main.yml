@@ -2,6 +2,7 @@
 # tasks file for mapr-pig
 
 - name: install mapr-pig
+  sudo_user: root
   yum: name=mapr-pig-{{pig_version}}.{{pig_build}} state=present
   when: ansible_distribution in ('CentOS', 'RedHat', 'Amazon')
   environment: proxy_env
